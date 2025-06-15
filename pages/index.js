@@ -1,9 +1,11 @@
 export default function Home() {
   return (
-    <div style={{ textAlign: 'center', marginTop: '100px' }}>
+    <main style={{ padding: '2rem', fontFamily: 'sans-serif', textAlign: 'center' }}>
       <h1>🏡 Chalet Rental Dashboard</h1>
-      <p>Welcome to your rental listings platform!</p>
-      <p>Go to /ChaletRentalDashboard to view your dashboard.</p>
-    </div>
+      <p>Welcome to your listings management tool.</p>
+      <a href="/ChaletRentalDashboard" style={{ color: 'blue', textDecoration: 'underline' }}>
+        Go to Dashboard
+      </a>
+    </main>
   );
 }
