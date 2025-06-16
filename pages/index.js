@@ -1,27 +1,44 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h1 style={{ textAlign: 'center', color: '#4A90E2' }}>
-        Welcome to Chalet Rental Dashboard
-      </h1>
-      <p style={{ textAlign: 'center' }}>
-        Manage your chalet bookings and availability seamlessly!
-      </p>
+    <main style={{ textAlign: 'center', padding: '2rem' }}>
+      <h1 style={{ fontSize: '2rem', color: '#2563eb' }}>Welcome to Chalet Rental Dashboard</h1>
+      <p style={{ marginTop: '0.5rem' }}>Manage your chalet bookings and availability seamlessly!</p>
 
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-        <div style={{ margin: '0 20px', padding: '10px', border: '1px solid #ddd', borderRadius: '8px', textAlign: 'center' }}>
-          <h3>View Chalets</h3>
-          <p>Browse available chalets for rent</p>
-        </div>
-        <div style={{ margin: '0 20px', padding: '10px', border: '1px solid #ddd', borderRadius: '8px', textAlign: 'center' }}>
-          <h3>Manage Bookings</h3>
-          <p>Track bookings and availability</p>
-        </div>
-        <div style={{ margin: '0 20px', padding: '10px', border: '1px solid #ddd', borderRadius: '8px', textAlign: 'center' }}>
-          <h3>Settings</h3>
-          <p>Update your dashboard preferences</p>
-        </div>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}>
+        <Link href="/chalets">
+          <div style={cardStyle}>
+            <strong>View Chalets</strong>
+            <p>Browse available chalets for rent</p>
+          </div>
+        </Link>
+
+        <Link href="/add-chalet">
+          <div style={cardStyle}>
+            <strong>Manage Bookings</strong>
+            <p>Track bookings and availability</p>
+          </div>
+        </Link>
+
+        <Link href="/settings">
+          <div style={cardStyle}>
+            <strong>Settings</strong>
+            <p>Update your dashboard preferences</p>
+          </div>
+        </Link>
       </div>
-    </div>
+    </main>
   );
 }
+
+const cardStyle = {
+  width: '180px',
+  border: '1px solid #ccc',
+  borderRadius: '8px',
+  padding: '1rem',
+  textAlign: 'center',
+  cursor: 'pointer',
+  backgroundColor: '#fff',
+  boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)'
+};
